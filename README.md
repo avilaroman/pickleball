@@ -34,7 +34,7 @@
 
 <p>Para tracker la bola uso <a href='https://nol.cs.nctu.edu.tw:234/open-source/TrackNet'>TrackNet</a> - una deep learning network para trackear objetos a rápidas velocidades. <br >Para los detectores de personas ResNet50.
 <h3>Ejemplo usando: <a href="https://github.com/avilaroman/pickleball/tree/main/VideoInput">Ejemplo de videos</a>
-![input_img1](VideoOutput/pickleball-GIF1.gif)  |  ![output_img1](VideoOutput/pickleball-GIF1.gif)
+![input_img1](https://github.com/avilaroman/pickleball/tree/main/VideoOutput/pickleball-GIF1.gif)  |  ![output_img1](https://github.com/avilaroman/pickleball/tree/main/VideoOutput/pickleball-GIF1.gif)
 </h3
 
   
