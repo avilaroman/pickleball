@@ -164,4 +164,58 @@ o tambien:
   <li><a href="https://nol.cs.nctu.edu.tw:234/open-source/TrackNet/tree/master/Code_Python3">TrackNet</a></li>
 </ul>
 
+<h1>EJEMPLO de sintetización descriptiva del video:</h1>
+<p>Inicio del Juego (0:00-0:03):
+
+El juego comienza con un saque del equipo de la izquierda (jugador de camiseta amarilla y su compañera).
+
+El jugador de amarillo golpea la pelota, la cual rebota en el suelo y va al lado contrario.
+
+La jugadora del equipo de la derecha intenta devolverla con un golpe, pero la pelota termina saliendo de la cancha.
+
+El punto va para el equipo de la izquierda.
+
+Intercambio de puntos y movimientos (0:03-0:32):
+
+El juego sigue con varios intercambios rápidos, donde ambos equipos intentan colocar la pelota estratégicamente.
+
+Se pueden ver golpes cruzados, voleas cerca de la red y algunos intentos de remate.
+
+Se aprecia un buen nivel de habilidad en la manipulación de la pelota y agilidad en los movimientos de ambos equipos.
+
+En varias ocasiones, se pueden ver golpes con muy poca altura sobre la red, exigiendo movimientos rápidos por parte de los jugadores.
+
+Continuación del juego (0:32-1:01):
+
+Los equipos siguen alternándose puntos y se pueden ver jugadas de gran intensidad.
+
+Se observan algunos saques que resultan en puntos directos.
+
+En un punto, se ve a una jugadora del equipo de la derecha dar un salto para darle a la pelota lo que hace mas dinamico y llamativo el juego.
+
+Ambos equipos muestran la importancia de trabajar en equipo para cubrir bien los espacios.
+
+Los movimientos rápidos de ambos equipos demuestran que es un juego de mucha agilidad.
+
+Fase final del partido (1:01-1:34):
+
+Los jugadores muestran un poco de cansancio pero siguen dando lo mejor de si mismos.
+
+Hay algunos intercambios largos donde la pelota pasa varias veces de un lado al otro de la red antes de que un equipo gane el punto.
+
+Un jugador del equipo de la izquierda da un giro muy vistoso con el que impacta la pelota.
+
+El partido sigue muy igualado con varios puntos de gran calidad por parte de ambos equipos.
+
+Se ven jugadas mas cerradas a la red y se puede apreciar como la habilidad de los jugadores empieza a marcar diferencia.
+
+El juego termina con un punto espectacular donde los jugadores de ambos equipos lucieron sus mejores habilidades.
+
+Consideraciones Adicionales:
+
+Ambiente: El partido se juega de noche, en una cancha iluminada con focos, lo que añade un toque especial a la atmósfera del juego.
+
+Actitud: Los jugadores muestran una actitud de competencia y deportividad, disfrutando del juego y esforzándose al máximo.
+
+</p>
 
