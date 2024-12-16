@@ -70,17 +70,17 @@ Input            |  Output
   ```
   
    <li>
-    Run the following command in the command line
+    Corre los siguientes comandos:
   </li>
   
   ```python
   python3 predict_video.py --input_video_path=VideoInput/video_input3.mp4 --output_video_path=VideoOutput/video_output.mp4 --minimap=0 --bounce=0
   ```
   
-  <li>If you are using Google Colab upload all the files to Google Drive, including yolov3 weights from step <strong>2.</strong></li>
+  <li>Google Colab upload todos los archivos del Google Drive, incluyendo el yolov3 pasan del paso <strong>2.</strong></li>
   
    <li>
-    Create a Google Colaboratory Notebook in the same directory as <code>predict_video.py</code>, change Runtime Type to <strong>GPU</strong> and connect it to Google drive
+    Creaun Google Colaboratory Notebook en el mismo directorio <code>predict_video.py</code>, canbia el Tuntime: <strong>GPU</strong> y conecta it to Google drive
   </li>
   
   ```python
@@ -98,7 +98,7 @@ Input            |  Output
   ```
   
   <li>
-    Install only 2 requirements, because Colab already has the rest
+    Instala 2 requerimientos, por que Colab ya tiene el rest
   </li>
   
   ```python
@@ -113,19 +113,19 @@ Input            |  Output
    !python3 predict_video.py --input_video_path=VideoInput/video.mp4 --output_video_path=VideoOutput/video_output.mp4 --minimap=0 --bounce=0
   ```
   
-  <p>After the compilation is completed, a new video will be created in <a href="/VideoOutput" target="_blank">VideoOutput folder</a> if <code>--minimap</code> was set <code>0</code>, if <code>--minimap=1</code> three videos will be created: video of the game, video of minimap and a combined video of both</p>
-  <p><i>P.S. If you stumble upon an <b>error</b> or have any questions feel free to open a new <a href='https://github.com/ArtLabss/tennis-tracking/issues'>Issue</a> </i></p>
+  <p>Despùés de la compilación es Completada, un nuevo video se creará en  <a href="/VideoOutput" target="_blank">la Carpeta: VideoOutput </a> SI el Minimap: <code>--minimap</code> fué seteado <code>0</code>, si: <code>--minimap=1</code> three videos will be created: video of the game, video of minimap and a combined video of both</p>
+  <p><i>Si te parece muy dificil o sale un <b>error</b> o tienes alguna pregunta contactame: by em@il:  avilaroman@gmail.com <a href='https://avilaroman.github.com'>Pickleball</a> </i></p>
   
 </ol>
 
 
-<h3>What's new?</h3>
+<h3>Que Hace y lo nuevo?</h3>
 <ul>
-  <li>Court line detection improved</li>
-  <li>Player detection improved</li>
-  <li>The algorithm now works practically with any court colors</li>
-  <li>Faster algorithm</li>
-  <li>Dynamic Mini-Map with players and ball added, to activate use argument <code>--minimap</code></li>
+  <li>Detecta las lineas de la cancha (Mejorada)</li>
+  <li>Detección del Jugador (Optimizada en cuadros)</li>
+  <li>El algoritmo ahora trabaja practicamente en cualquier color de cancha y pelotas verdes o de otro color</li>
+  <li>Algoritmo mas RAPIDO</li>
+  <li>Dynamic Mini-Mapa Dinámico con seguimiento de jugadores y pelota, para activarlo usá el argumento: <code>--minimap</code></li>
   </ul>
   
 `--minimap=0`            |  `--minimap=1`
@@ -136,7 +136,7 @@ Input            |  Output
   To predict bounce points machine learning library for time series <a href="https://www.sktime.org/en/stable/index.html">sktime</a> was used. Specifically, <a href="https://github.com/ArtLabss/tennis-tracking/blob/90652b4547311423ea49c4195dde9da9a81f1893/clf.pkl">TimeSeriesForestClassifier</a> was trained on 3 variables:  <code>x</code>, <code>y</code> coordinates of the ball and <code>V</code> for velocity (<code>V2-V1/t2-t1</code>). Data for training the model - <a href="https://github.com/ArtLabss/tennis-tracking/blob/main/bigDF.csv" >df.csv</a>
 <p>
 <ul>
-  <li>By specifiying <code>--bounce=1</code> bounce points can be detected and displayed</li>
+  <li>Como especificando: <code>--bounce=1</code> Puntos que pican y rebotan pueden ser detectadas y mostradas: </li>
 </ul>
 <p align="center">
   <kbd>
@@ -144,43 +144,19 @@ Input            |  Output
   </kbd>
 </p>
 
+
 <p>
-  The model predicts true negatives (not bounce) with accuracy of <strong>98%</strong> and true positives (bounce) with <strong>83%</strong>.
+  Este Modelo predice: Verdaderos negativos (sin rebotar) con una precisión de hasta un: <strong>98%</strong> Porciento de los Verdaderos Positivos (Rebotadas) con un: <strong>83%</strong>.
 </p>
 
 
-<h3>Further Developments</h3>
-<ul>
-  <li><strike>Improve line detection of the court and remove overlapping lines</strike></li>
-  <li><strike>Algorithm fails to detect players when the court colors aren't similar to the sample video</strike></li>
-  <li><strike>Don't detect the ballboys/ballgirls</strike></li>
-  <li><strike>Don't contour the banners</strike></li>
-  <li><strike>Find the coordinates of the ball touching the court and display them</strike></li>
-  <li>Code Optimization</li>
-  <li><strike>Dynamic court mini-map with players and the ball</strike></li>
-</ul>
 
-<h3>Current Drawbacks</h3>
-<ul>
-  <li>Slow algorithms (to process 15 seconds video (6.1 Mb) it takes <strike>28 minutes</strike> 16 minutes)<br><ul><li>Instead of writing a new video, a faster way would be to show the frame right after it has been processed</li></ul></li>
-  <li>Algorithm works only on official match videos</li>
-</ul>
  
-<h3>Helpful Repositories</h3>
+<h3>Repositorios de Ayuda / Consulta:</h3>
 <ul>
   <li><a href="https://github.com/MaximeBataille/tennis_tracking">Tennis Tracking</a> @MaximeBataille</li>
   <li><a href="https://github.com/avivcaspi/TennisProject">Tennis Project</a> @avivcaspi</li>
   <li><a href="https://nol.cs.nctu.edu.tw:234/open-source/TrackNet/tree/master/Code_Python3">TrackNet</a></li>
 </ul>
 
-<h3>Contribution</h3>
 
-<p>Help us by contributing, check out the <a href="https://github.com/ArtLabss/tennis-tracking/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>. Contributing is easy!</p>
-
-<h3>References</h3>
-
-- Yu-Chuan Huang, "TrackNet: Tennis Ball Tracking from Broadcast Video by Deep Learning Networks," Master Thesis, advised by Tsì-Uí İk and Guan-Hua Huang, National Chiao Tung University, Taiwan, April 2018. 
-
-- Yu-Chuan Huang, I-No Liao, Ching-Hsuan Chen, Tsì-Uí İk, and Wen-Chih Peng, "TrackNet: A Deep Learning Network for Tracking High-speed and Tiny Objects in Sports Applications," in the IEEE International Workshop of Content-Aware Video Analysis (CAVA 2019) in conjunction with the 16th IEEE International Conference on Advanced Video and Signal-based Surveillance (AVSS 2019), 18-21 September 2019, Taipei, Taiwan.
-
-- Joseph Redmon, Ali Farhadi, "YOLOv3: An Incremental Improvement", University of Washington, https://arxiv.org/pdf/1804.02767.pdf
