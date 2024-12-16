@@ -14,7 +14,7 @@
   <img src="https://img.shields.io/badge/license-Unlicense-blue.svg">
   <img src="https://hits.sh/github.com/ArtLabss/tennis-tracking.svg"/>
   <br>
-  <code>con ❤️ by avilaroman</code>
+  <code>con ❤️ por avilaroman</code>
   
 </p>
 
@@ -25,7 +25,7 @@
 ![Last Commit](https://img.shields.io/github/last-commit/ArtLabss/tennis-tracking.svg)  
 -->
 
-<h3>Objectivos</h3>
+<h3>Objectivos:</h3>
 <ul>
   <li>Trackea la pelota </li>
   <li>Detecta lineas de la cancha </li>
@@ -44,9 +44,9 @@ Input            |  Output
 
 <h3>Como correrlo:</h3>
 
-<p>This project requires compatible <b>GPU</b> to install tensorflow, you can run it on your local machine in case you have one or use <a href='https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwissLL5-MvxAhXwlYsKHbkBDEUQFnoECAMQAw&url=https%3A%2F%2Fcolab.research.google.com%2Fnotebooks%2F&usg=AOvVaw0eDNVclINNdlOuD-YTYiiB'>Google Colaboratory</a> with <b>Runtime Type</b> changed to <b>GPU</b>.</p>
+<p>Este proyecto requiere compatibilidad <b>GPU</b> para Instalar el Tensorflow, puedes correr: <a href='https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwissLL5-MvxAhXwlYsKHbkBDEUQFnoECAMQAw&url=https%3A%2F%2Fcolab.research.google.com%2Fnotebooks%2F&usg=AOvVaw0eDNVclINNdlOuD-YTYiiB'>Google Colaboratory</a> with <b>Tipo de Runtime</b> cambiado a <b>GPU</b>.</p>
 
-- [ ] Input videos have to be rallies of the game and shouldn't contain any <strong>commercials, breaks or spectators</strong>.
+- [ ] Los videos Input tienen que ser rallies del juego y no pueden contener ningun comercial o placa <strong>, o pausa o a Espectadores en el cuadro por que se comienza a fallar la detección.</strong>.
   
 <ol>
   <li>
@@ -89,7 +89,7 @@ Input            |  Output
   ```
   
   <li>
-    Change the working directory to the one where the Colab Notebook and <code>predict_video.py</code> are. In my case,
+    Cambia eñ directorio de trabajo para uno: en Colab Notebook y <code>predict_video.py</code> es en mi caso,
   </li>
   
   ```python
@@ -133,7 +133,7 @@ Input            |  Output
 ![input_img1](https://github.com/ArtLabss/tennis-tracking/blob/4b5ff2849b71af67023c4160c4f91481a6821bb3/VideoOutput/input6.gif)  |  ![output_img1](https://github.com/ArtLabss/tennis-tracking/blob/3124a8609b30deb557c1563c45febb1fd86c8956/VideoOutput/input3.gif)
 
 <p>
-  To predict bounce points machine learning library for time series <a href="https://www.sktime.org/en/stable/index.html">sktime</a> was used. Specifically, <a href="https://github.com/ArtLabss/tennis-tracking/blob/90652b4547311423ea49c4195dde9da9a81f1893/clf.pkl">TimeSeriesForestClassifier</a> was trained on 3 variables:  <code>x</code>, <code>y</code> coordinates of the ball and <code>V</code> for velocity (<code>V2-V1/t2-t1</code>). Data for training the model - <a href="https://github.com/ArtLabss/tennis-tracking/blob/main/bigDF.csv" >df.csv</a>
+  Para predecir los puntos de rebote en el la Librería del Machine Learning por el tiempo de las series. <a href="https://www.sktime.org/en/stable/index.html">sktime</a> fue usado. Specificamente, <a href="https://github.com/ArtLabss/tennis-tracking/blob/90652b4547311423ea49c4195dde9da9a81f1893/clf.pkl">TimeSeriesForestClassifier</a> fue entrenado en 3 variables:  <code>X</code>, <code>Y</code> coordenadas de la pelota y <code>V</code> para Velocidad (<code>V2-V1/t2-t1</code>). Ejemplo de Data del modelo ya entrenado: - <a href="https://github.com/avilaroan/pickleball/blob/main/bigDF.csv" >df.csv</a>
 <p>
 <ul>
   <li>Como especificando: <code>--bounce=1</code> Puntos que pican y rebotan pueden ser detectadas y mostradas: </li>
@@ -148,7 +148,6 @@ Input            |  Output
 <p>
   Este Modelo predice: Verdaderos negativos (sin rebotar) con una precisión de hasta un: <strong>98%</strong> Porciento de los Verdaderos Positivos (Rebotadas) con un: <strong>83%</strong>.
 </p>
-
 
 
  
