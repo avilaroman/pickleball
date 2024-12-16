@@ -1,5 +1,5 @@
 <p align='center'>
-  <a href="https://www.artlabs.tech"><img src='https://raw.githubusercontent.com/ArtLabss/tennis-tracking/main/VideoOutput/artlabs%20logo.jpg' width="150" height="170"></a>
+  <a href="https://www.artlabs.tech"><img src='https://tucumanpickleballclub.com.ar/wp-content/uploads/2023/03/Mesa-de-trabajo-264.png' width="150" height="170"></a>
 </p>
 
 <h1 align='center'>Pikleball Tracker 🎾</h1>
