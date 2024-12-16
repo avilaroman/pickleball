@@ -2,7 +2,7 @@
   <a href="https://www.artlabs.tech"><img src='https://raw.githubusercontent.com/ArtLabss/tennis-tracking/main/VideoOutput/artlabs%20logo.jpg' width="150" height="170"></a>
 </p>
 
-<h1 align='center'>Tennis Tracking 🎾</h1>
+<h1 align='center'>Pikleball Tracker 🎾</h1>
 <p align='center'>
   <img src="https://img.shields.io/github/forks/ArtLabss/tennis-tracking.svg">
   <img src="https://img.shields.io/github/stars/ArtLabss/tennis-tracking.svg">
@@ -14,7 +14,7 @@
   <img src="https://img.shields.io/badge/license-Unlicense-blue.svg">
   <img src="https://hits.sh/github.com/ArtLabss/tennis-tracking.svg"/>
   <br>
-  <code>With ❤️ by ArtLabs</code>
+  <code>con ❤️ by avilaroman</code>
   
 </p>
 
@@ -25,17 +25,15 @@
 ![Last Commit](https://img.shields.io/github/last-commit/ArtLabss/tennis-tracking.svg)  
 -->
 
-<h3>Objectives</h3>
+<h3>Objectivos</h3>
 <ul>
-  <li>Track the ball </li>
-  <li>Detect court lines </li>
-  <li>Detect the players</li>
+  <li>Trackea la pelota </li>
+  <li>Detecta lineas de la cancha </li>
+  <li>Detecta a los jugadores</li>
 </ul>
 
-<p>To track the ball we used <a href='https://nol.cs.nctu.edu.tw:234/open-source/TrackNet'>TrackNet</a> - deep learning network for tracking high-speed objects. For players detection ResNet50 was used. See <a href="https://artlabs.tech/projects/"> ArtLabs/projects</a> for more or similar projects.</p>
-
-
-<h3>Example using <a href="https://github.com/ArtLabss/tennis-tracking/tree/main/VideoInput">sample videos</a></h3>
+<p>Para tracker la bola uso <a href='https://nol.cs.nctu.edu.tw:234/open-source/TrackNet'>TrackNet</a> - una deep learning network para trackear objetos a rápidas velocidades.Para los detectores de personas ResNet50.
+<h3>Example using <a href="https://github.com/ArtLabss/tennis-tracking/tree/main/VideoInput">Ejemplo de videos</a></h3
 
   
 Input            |  Output
@@ -44,7 +42,7 @@ Input            |  Output
 ![input_img2](https://github.com/ArtLabss/tennis-tracking/blob/579fb3344935bbf4c5d08e27c99ffc6b56bed896/VideoOutput/ezgif.com-gif-maker(1).gif)  |  ![output_img2](https://github.com/ArtLabss/tennis-tracking/blob/579fb3344935bbf4c5d08e27c99ffc6b56bed896/VideoOutput/ezgif.com-gif-maker(2).gif)
 ![input_img3](https://github.com/ArtLabss/tennis-tracking/blob/06179bdd29d4424f5e19e5600802f853aaa86f22/VideoOutput/monteCarlo_input.gif)  |  ![output_img3](https://github.com/ArtLabss/tennis-tracking/blob/06179bdd29d4424f5e19e5600802f853aaa86f22/VideoOutput/monteCarlo_output.gif)
 
-<h3>How to run</h3>
+<h3>Como correrlo:</h3>
 
 <p>This project requires compatible <b>GPU</b> to install tensorflow, you can run it on your local machine in case you have one or use <a href='https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwissLL5-MvxAhXwlYsKHbkBDEUQFnoECAMQAw&url=https%3A%2F%2Fcolab.research.google.com%2Fnotebooks%2F&usg=AOvVaw0eDNVclINNdlOuD-YTYiiB'>Google Colaboratory</a> with <b>Runtime Type</b> changed to <b>GPU</b>.</p>
 
@@ -52,19 +50,19 @@ Input            |  Output
   
 <ol>
   <li>
-    Clone this repository
+    Clona este repositorio
   </li>
   
   ```git
-  git clone https://github.com/ArtLabss/tennis-tracking.git
+  git clone https://github.com/avilaroman/pickleball.git
   ```
   
    <li>
-     Download yolov3 weights (237 MB) from <a href="https://pjreddie.com/media/files/yolov3.weights">here</a> and add it to your <a href="/Yolov3">Yolov3 folder</a>.
+     Download el yolov3 Pesa: (237 MB) from <a href="https://pjreddie.com/media/files/yolov3.weights">aqui</a> y agrega tu <a href="/Yolov3">Yolov3 carpeta</a>.
   </li>
   
   <li>
-    Install the requirements using pip 
+    Instala los requerimientos usando pip
   </li>
   
   ```python
@@ -108,11 +106,11 @@ Input            |  Output
   ```
   
   <li>
-    Inside the notebook run <code>predict_video.py</code>
+    Adentro del notebook Corre el comando: <code>predict_video.py</code>
   </li>
   
   ```
-   !python3 predict_video.py --input_video_path=VideoInput/video_input3.mp4 --output_video_path=VideoOutput/video_output.mp4 --minimap=0 --bounce=0
+   !python3 predict_video.py --input_video_path=VideoInput/video.mp4 --output_video_path=VideoOutput/video_output.mp4 --minimap=0 --bounce=0
   ```
   
   <p>After the compilation is completed, a new video will be created in <a href="/VideoOutput" target="_blank">VideoOutput folder</a> if <code>--minimap</code> was set <code>0</code>, if <code>--minimap=1</code> three videos will be created: video of the game, video of minimap and a combined video of both</p>
