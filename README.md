@@ -93,7 +93,7 @@ Input            |  Output
   ```
   
   <li>
-    Cambia eñ directorio de trabajo para uno: en Colab Notebook y <code>predict_video.py</code> es en mi caso,
+    Cambia el directorio de trabajo para uno: en Colab Notebook y <code>predict_video.py</code> es en mi caso,
   </li>
   
   ```python
