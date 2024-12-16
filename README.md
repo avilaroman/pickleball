@@ -61,7 +61,7 @@ Input            |  Output
   ```
   
    <li>
-     Download el yolov3 Pesa: (237 MB) from <a href="https://pjreddie.com/media/files/yolov3.weights">aqui</a> y agrega tu <a href="/Yolov3">Yolov3 carpeta</a>.
+     Download el yolov3 Pesa: (237 MB) desde <a href="https://pjreddie.com/media/files/yolov3.weights">aqui</a> y agrega tu <a href="/Yolov3">Yolov3 carpeta</a>.
   </li>
   
   <li>
@@ -78,6 +78,7 @@ Input            |  Output
   
   ```python
   python3 predict_video.py --input_video_path=VideoInput/video_input3.mp4 --output_video_path=VideoOutput/video_output.mp4 --minimap=0 --bounce=0
+  python3 predict_video.py --input_video_path=pickleball.mp4 --output_video_path=pickleball_output.mp4 --minimap=1 --bounce=0 
   ```
   
   <li>Google Colab upload todos los archivos del Google Drive, incluyendo el yolov3 pasan del paso <strong>2.</strong></li>
@@ -114,11 +115,13 @@ Input            |  Output
   
   ```
    !python3 predict_video.py --input_video_path=VideoInput/video.mp4 --output_video_path=VideoOutput/video_output.mp4 --minimap=0 --bounce=0
+o tambien:
+    !python3 predict_video.py --input_video_path=pickleball.mp4 --output_video_path=pickleball_output.mp4 --minimap=1 --bounce=0
   ```
   
-  <p>Despùés de la compilación es Completada, un nuevo video se creará en  <a href="/VideoOutput" target="_blank">la Carpeta: VideoOutput </a> SI el Minimap: <code>--minimap</code> fué seteado <code>0</code>, si: <code>--minimap=1</code> three videos will be created: video of the game, video of minimap and a combined video of both</p>
+  <p>Despùés de la compilación es Completada, un nuevo video se creará en  <a href="/VideoOutput" target="_blank">la Carpeta: VideoOutput </a> SI el Minimap: <code>--minimap</code> fué seteado <code>0</code>, si: <code>--minimap=1</code> 3 videos seran creados del juego: 1) Video del juego 2) Video del minimap y 3) Combinados los 2 Videos</p>
   <p><i>Si te parece muy dificil o sale un <b>error</b> o tienes alguna pregunta contactame: by em@il:  avilaroman@gmail.com <a href='https://avilaroman.github.com'>Pickleball</a> </i></p>
-  
+  CABE DESTACAR QUE ESTE SOFTWARE TAMBIÉN FUNCIONA PARA CASI CUALQUIER DEPORTE DE PALETA PELOTA: Ping Pong / Padel / Squash / Tenis en distintas superficies 
 </ol>
 
 
