@@ -32,8 +32,10 @@
   <li>Detecta a los jugadores</li>
 </ul>
 
-<p>Para tracker la bola uso <a href='https://nol.cs.nctu.edu.tw:234/open-source/TrackNet'>TrackNet</a> - una deep learning network para trackear objetos a rápidas velocidades.Para los detectores de personas ResNet50.
-<h3>Example using <a href="https://github.com/ArtLabss/tennis-tracking/tree/main/VideoInput">Ejemplo de videos</a></h3
+<p>Para tracker la bola uso <a href='https://nol.cs.nctu.edu.tw:234/open-source/TrackNet'>TrackNet</a> - una deep learning network para trackear objetos a rápidas velocidades. <br >Para los detectores de personas ResNet50.
+<h3>Ejemplo usando: <a href="https://github.com/avilaroman/pickleball/tree/main/VideoInput">Ejemplo de videos</a>
+![input_img1](VideoOutput/pickleball-GIF1.gif)  |  ![output_img1](VideoOutput/pickleball-GIF1.gif)
+</h3
 
   
 Input            |  Output
