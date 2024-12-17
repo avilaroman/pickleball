@@ -188,7 +188,7 @@ y ya se lo adapta para el mejor judgado, pero igual sino igual también anda con
   <li><a href="https://nol.cs.nctu.edu.tw:234/open-source/TrackNet/tree/master/Code_Python3">TrackNet</a></li>
 </ul>
 
-<h1>EJEMPLO de sintetización descriptiva del video:</h1>
+<h1>EJEMPLO de sintetización descriptiva del video: <br> Usando GEMINI 2.0 Nativo</h1>
 <p>Inicio del Juego (0:00-0:03):
 
 El juego comienza con un saque del equipo de la izquierda (jugador de camiseta amarilla y su compañera).
