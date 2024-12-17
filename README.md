@@ -121,7 +121,31 @@ o tambien:
   
   <p>Despùés de la compilación es Completada, un nuevo video se creará en  <a href="/VideoOutput" target="_blank">la Carpeta: VideoOutput </a> SI el Minimap: <code>--minimap</code> fué seteado <code>0</code>, si: <code>--minimap=1</code> 3 videos seran creados del juego: 1) Video del juego 2) Video del minimap y 3) Combinados los 2 Videos</p>
   <p><i>Si te parece muy dificil o sale un <b>error</b> o tienes alguna pregunta contactame: by em@il:  avilaroman@gmail.com <a href='https://avilaroman.github.com'>Pickleball</a> </i></p>
-  CABE DESTACAR QUE ESTE SOFTWARE TAMBIÉN FUNCIONA PARA CASI CUALQUIER DEPORTE DE PALETA PELOTA: Ping Pong / Padel / Squash / Tenis en distintas superficies 
+  CABE DESTACAR QUE ESTE SOFTWARE TAMBIÉN FUNCIONA PARA CASI CUALQUIER DEPORTE DE PALETA PELOTA: Ping Pong / Padel / Squash / Tenis en distintas superficies.
+  se debe cambiar las 9 imagenes de reconocimiento de la cancha: Los Sprites en la carpeta <br> 
+  /pickleball/court_configurations/
+
+History
+This branch is 0 commits ahead of avilaroman/pickleball:main.
+This branch is 18 commits ahead of ArtLabss/tennis-tracking:main.
+Folders and files
+parent directory
+..
+court_conf_1.png
+court_conf_10.png
+court_conf_11.png
+court_conf_12.png
+court_conf_2.png
+court_conf_3.png
+court_conf_4.png
+court_conf_5.png
+court_conf_6.png
+court_conf_7.png
+court_conf_8.png
+court_conf_9.png
+court_reference.png
+
+y ya se lo adapta para el mejor judgado, pero igual sino igual también anda con un 85%.
 </ol>
 
 
