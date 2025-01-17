@@ -14,9 +14,9 @@ steps:
   displayName: 'Analizador de picleball'
 
 - script: |
-    pip install opencv-python
     pip install PIL
     pip install cv2
+    pip install opencv-python
     pip install yolov3
     pip install imutils
     pip install pandas
