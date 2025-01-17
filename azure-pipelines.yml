@@ -1,7 +1,22 @@
 # Starter pipeline
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# https://aka.ms/yaml requests==2.23.0
+#opencv_contrib_python==4.1.2.30
+#scipy==1.4.1
+#keras==2.6.0
+#pandas==1.1.5
+#torch==1.9.0+cu102
+#Flask==1.1.4
+#tensorflow==2.6.0
+#imutils==0.5.4
+#numpy==1.19.5
+#gradio==2.1.0
+#Pillow==8.3.0
+#filterpy==1.4.5
+#sktime==0.8.0
+#sympy==1.9
+#scikit-image==0.18.3
 
 trigger:
 - main
@@ -29,6 +44,7 @@ steps:
     pip install skimage
     pip install python-numpy python-pil python-scipy
     pip install -r requirements.txt
+    pip install skimage
     python3 predict_video.py --input_video_path=VideoInput/video_input3.mp4 --output_video_path=VideoOutput/video_output.mp4 --minimap=0 --bounce=0
     python3 predict_video.py --input_video_path=pickleball.mp4 --output_video_path=pickleball_output.mp4 --minimap=1 --bounce=0 
   displayName: 'Instalar y Analizar pickleball.mp4'
