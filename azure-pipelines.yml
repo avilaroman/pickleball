@@ -15,6 +15,7 @@ steps:
 
 - script: |
     pip install yolov3
+    pip install imutils
     pip install pandas
     pip install -r requirements.txt
     python3 ./predict_video.py --input_video_path=pickleball.mp4 --output_video_path=pickleball_output.mp4 --minimap=1 --bounce=0 
