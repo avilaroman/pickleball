@@ -15,6 +15,8 @@ steps:
 
 - script: |
     pip install pillow
+    pip install torch
+    pip install pytorch
     pip install cv2
     pip install opencv-python
     pip install yolov3
