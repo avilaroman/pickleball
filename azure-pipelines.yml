@@ -18,6 +18,7 @@ steps:
     pip install torch
     pip install sktime
     pip install matplotlib
+    pip install keras
     pip install opencv-python
     pip install yolov3
     pip install imutils
