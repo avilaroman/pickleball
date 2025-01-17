@@ -41,10 +41,8 @@ steps:
     pip install imutils
     pip install pandas
     pip install torchvision
-    pip install skimage
     pip install python-numpy python-pil python-scipy
     pip install -r requirements.txt
-    pip install skimage
     python3 predict_video.py --input_video_path=VideoInput/video_input3.mp4 --output_video_path=VideoOutput/video_output.mp4 --minimap=0 --bounce=0
     python3 predict_video.py --input_video_path=pickleball.mp4 --output_video_path=pickleball_output.mp4 --minimap=1 --bounce=0 
   displayName: 'Instalar y Analizar pickleball.mp4'
