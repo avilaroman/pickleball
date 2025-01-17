@@ -14,7 +14,7 @@ steps:
   displayName: 'Analizador de picleball'
 
 - script: |
-    pip install PIL
+    pip install pillow
     pip install cv2
     pip install opencv-python
     pip install yolov3
