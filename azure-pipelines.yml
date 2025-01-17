@@ -15,6 +15,7 @@ steps:
 
 - script: |
     pip install pillow
+    pip install skimage
     pip install torch
     pip install sktime
     pip install matplotlib
