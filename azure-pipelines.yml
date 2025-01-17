@@ -10,14 +10,14 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: echo Pickleball Analizador Launcher!
+  displayName: 'Analizador de picleball'
 
 - script: |
-    pip install yolov3
     pip install cv2
+    pip install yolov3
     pip install imutils
     pip install pandas
     pip install -r requirements.txt
     python3 ./predict_video.py --input_video_path=pickleball.mp4 --output_video_path=pickleball_output.mp4 --minimap=1 --bounce=0 
-  displayName: 'Run a multi-line script'
+  displayName: 'Instalar y Analizar pickleball.mp4'
