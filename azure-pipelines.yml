@@ -13,6 +13,7 @@ steps:
 - script: echo Pickleball Analizador Launcher!
   displayName: 'Analizador de picleball'
 
+
 - script: |
     pip install pillow
     pip install torch
