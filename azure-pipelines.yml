@@ -19,6 +19,7 @@ steps:
     pip install sktime
     pip install matplotlib
     pip install keras
+    pip install tensorflow
     pip install opencv-python
     pip install yolov3
     pip install imutils
