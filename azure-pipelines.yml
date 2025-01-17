@@ -14,6 +14,7 @@ steps:
   displayName: 'Analizador de picleball'
 
 - script: |
+    pip install opencv-python
     pip install cv2
     pip install yolov3
     pip install imutils
