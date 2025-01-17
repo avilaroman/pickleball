@@ -15,6 +15,7 @@ steps:
 
 - script: |
     pip install opencv-python
+    pip install PIL
     pip install cv2
     pip install yolov3
     pip install imutils
