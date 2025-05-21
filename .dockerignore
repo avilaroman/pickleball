@@ -1,0 +1,15 @@
+Dockerfile
+.dockerignore
+.git/
+.gitignore
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+VideoInput/*
+VideoOutput/*
+Yolov3/yolov3.weights
+# Add any other local files/directories that shouldn't be in the image
+venv/
+.idea/
+*.DS_Store
