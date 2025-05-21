@@ -2,7 +2,7 @@
   <a href="https://www.artlabs.tech"><img src='https://tucumanpickleballclub.com.ar/wp-content/uploads/2023/03/Mesa-de-trabajo-264.png' width="150" height="170"></a>
 </p>
 
-<h1 align='center'>Pikleball Tracker 🎾</h1>
+<h1 align='center'>Pickleball Tracker 🎾</h1>
 <p align='center'>
   <img src="https://img.shields.io/github/forks/ArtLabss/tennis-tracking.svg">
   <img src="https://img.shields.io/github/stars/ArtLabss/tennis-tracking.svg">
