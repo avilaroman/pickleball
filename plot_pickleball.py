@@ -196,10 +196,14 @@ def build_html(indices: List[int], xs: List[float], ys: List[float], vs: List[fl
     chart_w = 520
     chart_h = 520
 
+    # Convert speeds to km/h (assume input in m/s). If different units, adjust factor.
+    SPEED_CONVERSION_TO_KMH = 3.6
+    vs_kmh = [v * SPEED_CONVERSION_TO_KMH for v in vs]
+
     # Data bounds
     min_x, max_x = min(xs), max(xs)
     min_y, max_y = min(ys), max(ys)
-    min_v, max_v = min(vs), max(vs)
+    min_v, max_v = min(vs_kmh), max(vs_kmh)
     min_i, max_i = min(indices), max(indices)
 
     # Areas
@@ -215,8 +219,17 @@ def build_html(indices: List[int], xs: List[float], ys: List[float], vs: List[fl
     svg_elems.append(f'<rect x="0" y="0" width="{total_w}" height="{total_h}" fill="#ffffff"/>')
 
     # Titles
-    svg_elems.append(f'<text x="{traj_x0}" y="{traj_y0 - 12}" font-family="Arial" font-size="16" fill="#111">Trayectoria de la pelota (color = velocidad)</text>')
-    svg_elems.append(f'<text x="{chart_x0}" y="{chart_y0 - 12}" font-family="Arial" font-size="16" fill="#111">Velocidad vs. fotograma</text>')
+    svg_elems.append(f'<text x="{traj_x0}" y="{traj_y0 - 12}" font-family="Arial" font-size="16" fill="#111">Trayectoria de la pelota (color = velocidad km/h)</text>')
+    svg_elems.append(f'<text x="{chart_x0}" y="{chart_y0 - 12}" font-family="Arial" font-size="16" fill="#111">Velocidad (km/h) vs. fotograma</text>')
+
+    # Arrowhead definition (adopts stroke color)
+    svg_elems.append(
+        '<defs>'
+        '<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">'
+        '<path d="M 0 0 L 10 5 L 0 10 z" fill="context-stroke" />'
+        '</marker>'
+        '</defs>'
+    )
 
     # Borders
     svg_elems.append(f'<rect x="{traj_x0}" y="{traj_y0}" width="{plot_w}" height="{plot_h}" fill="none" stroke="#ccc"/>')
@@ -228,7 +241,7 @@ def build_html(indices: List[int], xs: List[float], ys: List[float], vs: List[fl
         y0 = scale_linear(ys[i], min_y, max_y, traj_y0, traj_y0 + plot_h)
         x1 = scale_linear(xs[i+1], min_x, max_x, traj_x0, traj_x0 + plot_w)
         y1 = scale_linear(ys[i+1], min_y, max_y, traj_y0, traj_y0 + plot_h)
-        v_mid = (vs[i] + vs[i+1]) * 0.5
+        v_mid = (vs_kmh[i] + vs_kmh[i+1]) * 0.5
         t = 0.0 if max_v == min_v else (v_mid - min_v) / (max_v - min_v)
         color = viridis_rgb_hex(t)
         svg_elems.append(f'<line x1="{x0:.1f}" y1="{y0:.1f}" x2="{x1:.1f}" y2="{y1:.1f}" stroke="{color}" stroke-width="2" stroke-linecap="round"/>')
@@ -237,9 +250,54 @@ def build_html(indices: List[int], xs: List[float], ys: List[float], vs: List[fl
     for i in range(len(xs)):
         px = scale_linear(xs[i], min_x, max_x, traj_x0, traj_x0 + plot_w)
         py = scale_linear(ys[i], min_y, max_y, traj_y0, traj_y0 + plot_h)
-        t = 0.0 if max_v == min_v else (vs[i] - min_v) / (max_v - min_v)
+        t = 0.0 if max_v == min_v else (vs_kmh[i] - min_v) / (max_v - min_v)
         color = viridis_rgb_hex(t)
         svg_elems.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="2.5" fill="{color}" />')
+
+    # Velocity vectors on trajectory (direction from position deltas, length scaled by km/h)
+    def map_to_svg(xd: float, yd: float) -> Tuple[float, float]:
+        return (
+            scale_linear(xd, min_x, max_x, traj_x0, traj_x0 + plot_w),
+            scale_linear(yd, min_y, max_y, traj_y0, traj_y0 + plot_h),
+        )
+
+    def normalize(dx_p: float, dy_p: float) -> Tuple[float, float]:
+        mag = (dx_p * dx_p + dy_p * dy_p) ** 0.5
+        if mag == 0:
+            return 0.0, 0.0
+        return dx_p / mag, dy_p / mag
+
+    L_MIN = 6.0
+    L_MAX = 22.0
+    n = len(xs)
+    for i in range(n):
+        # central difference for direction
+        if i == 0:
+            dx = xs[i+1] - xs[i]
+            dy = ys[i+1] - ys[i]
+        elif i == n - 1:
+            dx = xs[i] - xs[i-1]
+            dy = ys[i] - ys[i-1]
+        else:
+            dx = (xs[i+1] - xs[i-1]) * 0.5
+            dy = (ys[i+1] - ys[i-1]) * 0.5
+
+        # map to pixel space for accurate orientation under non-uniform scaling
+        px, py = map_to_svg(xs[i], ys[i])
+        p_dir_x, p_dir_y = map_to_svg(xs[i] + dx, ys[i] + dy)
+        dir_px = p_dir_x - px
+        dir_py = p_dir_y - py
+        ux, uy = normalize(dir_px, dir_py)
+
+        # scale length by speed in km/h
+        vk = vs_kmh[i]
+        t = 0.0 if max_v == min_v else (vk - min_v) / (max_v - min_v)
+        length = L_MIN + t * (L_MAX - L_MIN)
+
+        ex = px + ux * length
+        ey = py + uy * length
+        color = viridis_rgb_hex(t)
+        svg_elems.append(f'<line x1="{px:.1f}" y1="{py:.1f}" x2="{ex:.1f}" y2="{ey:.1f}" stroke="{color}" stroke-width="2" marker-end="url(#arrow)"/>')
 
     # Bounce markers on trajectory
     for i in range(len(xs)):
@@ -262,9 +320,9 @@ def build_html(indices: List[int], xs: List[float], ys: List[float], vs: List[fl
         color = viridis_rgb_hex(t)
         svg_elems.append(f'<rect x="{cb_x}" y="{y:.2f}" width="{cb_w}" height="{cb_h/steps + 1:.2f}" fill="{color}" stroke="none"/>')
     svg_elems.append(f'<rect x="{cb_x}" y="{cb_y}" width="{cb_w}" height="{cb_h}" fill="none" stroke="#666"/>')
-    svg_elems.append(f'<text x="{cb_x + cb_w + 6}" y="{cb_y + 12}" font-family="Arial" font-size="11" fill="#111">{max_v:.1f}</text>')
-    svg_elems.append(f'<text x="{cb_x + cb_w + 6}" y="{cb_y + cb_h}" font-family="Arial" font-size="11" fill="#111">{min_v:.1f}</text>')
-    svg_elems.append(f'<text x="{cb_x - 4}" y="{cb_y - 8}" font-family="Arial" font-size="12" fill="#111">Velocidad</text>')
+    svg_elems.append(f'<text x="{cb_x + cb_w + 6}" y="{cb_y + 12}" font-family="Arial" font-size="11" fill="#111">{max_v:.1f} km/h</text>')
+    svg_elems.append(f'<text x="{cb_x + cb_w + 6}" y="{cb_y + cb_h}" font-family="Arial" font-size="11" fill="#111">{min_v:.1f} km/h</text>')
+    svg_elems.append(f'<text x="{cb_x - 4}" y="{cb_y - 8}" font-family="Arial" font-size="12" fill="#111">Velocidad (km/h)</text>')
 
     # Speed over frames polyline
     # Axes box already drawn. Build polyline points
@@ -272,7 +330,7 @@ def build_html(indices: List[int], xs: List[float], ys: List[float], vs: List[fl
     for i in range(len(indices)):
         tx = scale_linear(indices[i], min_i, max_i, chart_x0, chart_x0 + chart_w)
         # invert so higher speed is visually higher (SVG y increases down)
-        ty = scale_linear(vs[i], min_v, max_v, chart_y0 + chart_h, chart_y0)
+        ty = scale_linear(vs_kmh[i], min_v, max_v, chart_y0 + chart_h, chart_y0)
         poly_pts.append(f"{tx:.1f},{ty:.1f}")
     svg_elems.append(f'<polyline points="{' '.join(poly_pts)}" fill="none" stroke="#1f77b4" stroke-width="2"/>')
 
