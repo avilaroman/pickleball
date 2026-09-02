@@ -1,48 +1,48 @@
-# Contributing
+# Contribuciones
 
-Contributions are welcome, and they are <strong>greatly appreciated</strong>! Every little bit
-helps, and credit will always be given.
+¡Las contribuciones son bienvenidas y muy apreciadas!
+Toda ayuda es bienvenida y siempre se reconocerá el mérito.
 
-You can contribute in many ways:
+Puedes contribuir de muchas maneras:
 
-## Types of Contributions
+## Tipos de Contribuciones
 
-### Report Bugs
+### Informar de Errores
 
-Report bugs at https://github.com/ArtLabss/tennis-tracking/issues.
+Informa de los errores en https://github.com/ArtLabss/tennis-tracking/issues.
 
-If you are reporting a bug, please include:
+Si informas de un error, incluye:
 
-- Your operating system name and version.
-- Any details about your local setup that might be helpful in troubleshooting.
-- Detailed steps to reproduce the bug.
+- El nombre y la versión de tu sistema operativo.
 
-### Fix Bugs
+- Cualquier detalle sobre tu configuración local que pueda ser útil para la resolución de problemas.
 
+- Pasos detallados para reproducir el error.
 
-Look through the GitHub issues for bugs. Anything tagged with "bug" and "help
-wanted" is open to whoever wants to implement it.
+### Corregir Errores
 
-### Implement Features
+Consulta los problemas de GitHub para encontrar errores. Cualquier problema etiquetado como "error" y "se necesita ayuda" está disponible para quien desee implementarlo.
 
-Look through the GitHub issues for features. Anything tagged with "enhancement"
-and "help wanted" is open to whoever wants to implement it.
+### Implementar Funcionalidades
 
-### Write Documentation
+Consulta los problemas de GitHub para encontrar funcionalidades. Cualquier problema etiquetado como "mejora" y "se necesita ayuda" está disponible para quien desee implementarlo.
 
+### Escribir documentación
 
-tennis-tracking could always use more documentation, whether as part of the
-official tennis-tracking docs, in docstrings, or even on the web in blog posts,
-articles, and such.
+Tennis-tracking siempre necesita más documentación, ya sea como parte de la
+documentación oficial de tennis-tracking, en cadenas de documentación o incluso en la web en entradas de blog,
+artículos, etc.
 
-### Submit Feedback
+### Enviar comentarios
 
-The best way to send feedback is to file an issue at 
+La mejor manera de enviar comentarios es abrir una incidencia en
 https://github.com/ArtLabss/tennis-tracking/issues.
 
-If you are proposing a feature:
+Si propones una función:
 
-- Explain in detail how it would work.
-- Keep the scope as narrow as possible, to make it easier to implement.
-- Remember that this is a open-source project, and that contributions 
-  are welcome :)
+- Explica en detalle cómo funcionaría.
+
+- Limita el alcance lo máximo posible para facilitar su implementación.
+
+- Recuerda que este es un proyecto de código abierto y que las contribuciones
+son bienvenidas :)
